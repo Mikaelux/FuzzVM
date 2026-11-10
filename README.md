@@ -1,0 +1,20 @@
+
+## Introduction
+This project is my attempt at understanding multiple topics I'd be learning this semester through a productive "question" project.
+
+## Goal
+- Understanding compilation and all the steps that went into it, and refresh/develop on AI algorithms. Eventually my own personal studies got involved when I tried understanding fuzzers. So this project went from attempting just a compiler to developing one and testing it within the constraints of a fuzzer: seeing how different error-handling methods affected functionality and how modular compilation was important but in practice.
+- The more research-valid question was where AI got involved, "Can RL make fuzzers work better?", contrary to the result, I thought that randomization was what got fuzzers so deep into coverage, and AI would fail when it came to exploring deeply and get redundant results from learning failures/feedback loops, even with my results I still think prolonged coverage would need more randomization.
+
+## Description
+- The VM itself is simple and stack-based, I planned to make something similar to how I observed x8086 assembly work in S3 but because of the bigger scope and deadline (I had to wrap this up before exam season to focus on studying), I decided to pull it down and not involve memory operations either (I regret this a lot, I think I would've learned a lot about low level if I had dedicated myself to that, a future update of this project might involve a whole rework of the VM, thank god the assembly is modular). Some register operations to make up for memory, callstack because a lot of interesting errors come from control flow.
+- Assembler was a pre-study on topics I was going to learn during my current semester: earlier iterations had everything happen in one function, but after a bit of personal study I split it up to look a little bit more like actual compilation. I got better resources once my lectures started so I now have a better understanding of the modularity theoretically, separate assembler functions might get an update since its more cleanup than functionality.
+- RL I had already attempted a neural network in a Jupyter notebook, when I was studying to do that a lot of people relied on pytorch so I thought this iteration (since it would use a more complicated algorithm than REINFORCE) would be the time to familiarize myself with it --granted i dont know if I'm interested in AI work, but its good to know, future proofing and what not-- deadlines played a role in using pytorch here too. I checked the scope of my AI module with my professor and it was more algorithmical, so I went with a simple algorithm to understand (the actor-critic tree) since I need to be optimal with what I learn.
+
+## Learned Lessons
+Planning project architecture extensively on paper: Continuously adding ideas or not understanding enough about the connections I was going to use before beginning to code impacted legibility, separating into different files is the only reason it's comprehensible. Being ambitious with code is great but I have to think carefully about functions and architecture before any real code happens. Laying down .h files in this case firsthand would have helped more than working on each step alone.
+                  Academic writing: Due to time constraints i only wrote a 'paper-structured report', an actual 'paper' would have needed more time --particularly to do reading and evaluate my grammar. In order to be more fluent and extensive academically-speaking, I need to read more papers for the purpose of evaluating the grammar and writing style used mainly and concepts secondly. I will be revisiting introductory articles with 'simple' concepts, and work on them as a grammar project rather than a computer science one.
+
+## Might Revisit to:
+ - Make the assembler more modular and separate functions in a cleaner way.
+ - Rework the entire VM core so results can be more relevant (Memory is an important step here, but any updates would need a full rework of the entire project, hence needing to fix modularity first)
